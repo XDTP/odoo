@@ -22,7 +22,7 @@ class BarcodeNomenclature(models.Model):
     upc_ean_conv = fields.Selection(UPC_EAN_CONVERSIONS, string='UPC/EAN Conversion', required=True, default='always',
         help="UPC Codes can be converted to EAN by prefixing them with a zero. This setting determines if a UPC/EAN barcode should be automatically converted in one way or another when trying to match a rule with the other encoding.")
 
-    # returns the checksum of the ean13, or -1 if the ean has not the correct length, ean must be a string
+    # returns the checksum of the ean13, or -1 if the ean has not the correct length, ean must be a string test
     def ean_checksum(self, ean):
         code = list(ean)
         if len(code) != 13:
